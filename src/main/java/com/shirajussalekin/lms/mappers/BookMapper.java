@@ -14,7 +14,8 @@ public class BookMapper {
                 book.getPublicationName(),
                 book.getPublicationDate(),
                 book.getPublicationDate(),
-                book.getReaders()
+                book.getReaders(),
+                book.getAuthors()
         );
     }
 
@@ -28,7 +29,8 @@ public class BookMapper {
                 bookDto.getPublicationName(),
                 bookDto.getPublicationDate(),
                 bookDto.getCreationDateTime(),
-                bookDto.getReaders()
+                bookDto.getReaders(),
+                bookDto.getAuthors()
         );
     }
 

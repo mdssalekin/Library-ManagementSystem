@@ -1,8 +1,6 @@
 package com.shirajussalekin.lms.services;
 
 import com.shirajussalekin.lms.dto.AuthorDto;
-import com.shirajussalekin.lms.entities.Author;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 

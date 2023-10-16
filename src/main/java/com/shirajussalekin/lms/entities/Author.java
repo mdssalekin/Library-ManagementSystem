@@ -3,6 +3,7 @@ package com.shirajussalekin.lms.entities;
 import jakarta.persistence.*;
 import lombok.*;
 import java.util.Date;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -18,6 +19,19 @@ public class Author extends BaseEntity {
     @Column(name = "imgUrl")
     private String imgUrl;
 
+    @ManyToMany
+    @JoinTable(
+            name = "authors_books",
+            joinColumns = @JoinColumn(
+                    name = "authod_id",
+                    referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(
+                    name = "book_id",
+                    referencedColumnName = "id"
+            )
+    )
+    private Set<Book> books;
+
     public Author(
             Long id,
             String firstName,
@@ -27,7 +41,8 @@ public class Author extends BaseEntity {
             String contactNo,
             String imgUrl,
             Date dateOfBirth,
-            Date creationDateTime
+            Date creationDateTime,
+            Set<Book> books
     ) {
         super(
                 firstName,
@@ -40,5 +55,6 @@ public class Author extends BaseEntity {
         );
         this.id = id;
         this.imgUrl = imgUrl;
+        this.books = books;
     }
 }

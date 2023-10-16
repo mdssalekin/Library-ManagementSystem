@@ -40,7 +40,7 @@ public class BookServiceImpl implements BookService {
                 .findAll()
                 .stream()
                 .map(
-                        (book) -> BookMapper.mapToBookDto(book))
+                        book -> BookMapper.mapToBookDto(book))
                 .collect(Collectors.toList());
     }
 
@@ -58,7 +58,8 @@ public class BookServiceImpl implements BookService {
                 bookDto.getPublicationName(),
                 bookDto.getPublicationDate(),
                 bookDto.getCreationDateTime(),
-                bookDto.getReaders()
+                bookDto.getReaders(),
+                bookDto.getAuthors()
         );
         return BookMapper.mapToBookDto(bookRepository.save(newBook));
     }

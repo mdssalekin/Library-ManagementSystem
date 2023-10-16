@@ -14,7 +14,8 @@ public class AuthorMapper {
                 author.getContactNo(),
                 author.getImgUrl(),
                 author.getDateOfBirth(),
-                author.getCreationDateTime()
+                author.getCreationDateTime(),
+                author.getBooks()
         );
     }
 
@@ -28,7 +29,8 @@ public class AuthorMapper {
                 authorDto.getContactNo(),
                 authorDto.getImgUrl(),
                 authorDto.getDateOfBirth(),
-                authorDto.getCreationDateTime()
+                authorDto.getCreationDateTime(),
+                authorDto.getBooks()
         );
     }
 }

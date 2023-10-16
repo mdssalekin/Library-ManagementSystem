@@ -1,5 +1,6 @@
 package com.shirajussalekin.lms.dto;
 
+import com.shirajussalekin.lms.entities.Book;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,6 +8,7 @@ import lombok.Setter;
 
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -22,4 +24,6 @@ public class AuthorDto {
     private String imgUrl;
     private Date dateOfBirth;
     private Date creationDateTime = new Timestamp(new Date().getTime());
+    private Set<Book> books;
+
 }

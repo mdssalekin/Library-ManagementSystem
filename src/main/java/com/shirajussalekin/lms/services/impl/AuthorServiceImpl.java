@@ -39,7 +39,7 @@ public class AuthorServiceImpl implements AuthorService {
                 .findAll()
                 .stream()
                 .map(
-                        (author) -> AuthorMapper.mapToAuthorDto(author))
+                        author -> AuthorMapper.mapToAuthorDto(author))
                 .collect(Collectors.toList());
     }
 
@@ -57,7 +57,8 @@ public class AuthorServiceImpl implements AuthorService {
                 authorDto.getContactNo(),
                 authorDto.getImgUrl(),
                 authorDto.getDateOfBirth(),
-                authorDto.getCreationDateTime()
+                authorDto.getCreationDateTime(),
+                authorDto.getBooks()
         );
         return AuthorMapper.mapToAuthorDto(authorRepository.save(author));
     }

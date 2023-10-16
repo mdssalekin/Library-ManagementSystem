@@ -1,5 +1,6 @@
 package com.shirajussalekin.lms.dto;
 
+import com.shirajussalekin.lms.entities.Author;
 import com.shirajussalekin.lms.entities.Reader;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,4 +27,5 @@ public class BookDto {
     private Date publicationDate;
     private Date creationDateTime = new Timestamp(new Date().getTime());
     private Set<Reader> readers;
+    private Set<Author> authors;
 }
