@@ -54,7 +54,6 @@ public class RoleServiceImpl implements RoleService {
                 roleDto.getId(),
                 roleDto.getRoleName(),
                 roleDto.getDescription(),
-                roleDto.getEmployees(),
                 roleDto.getPrivileges()
         );
 

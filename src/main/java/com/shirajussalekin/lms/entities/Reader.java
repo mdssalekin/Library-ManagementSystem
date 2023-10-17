@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -33,5 +34,11 @@ public class Reader extends BaseEntity {
                     name = "book_id",
                     referencedColumnName = "id"))
     private Set<Book> books;
+
+//    @OneToMany(mappedBy = "sender")
+//    private List<Message> sentMessages;
+//
+//    @OneToMany(mappedBy = "receiver")
+//    private List<Message> receivedMessages;
 
 }

@@ -17,6 +17,5 @@ public class RoleDto {
     private Long id;
     private String roleName;
     private String description;
-    private Set<Employee> employees;
     private Set<Privilege> privileges;
 }

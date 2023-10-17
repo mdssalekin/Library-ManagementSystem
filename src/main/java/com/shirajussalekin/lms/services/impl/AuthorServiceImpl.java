@@ -9,14 +9,16 @@ import com.shirajussalekin.lms.services.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
 public class AuthorServiceImpl implements AuthorService {
-
+    private final AuthorRepository authorRepository;
     @Autowired
-    private AuthorRepository authorRepository;
+    public AuthorServiceImpl(AuthorRepository authorRepository) {
+        this.authorRepository = authorRepository;
+    }
 
     @Override
     public AuthorDto createAuthor(AuthorDto authorDto) {
@@ -38,8 +40,7 @@ public class AuthorServiceImpl implements AuthorService {
         return authorRepository
                 .findAll()
                 .stream()
-                .map(
-                        author -> AuthorMapper.mapToAuthorDto(author))
+                .map(AuthorMapper::mapToAuthorDto)
                 .collect(Collectors.toList());
     }
 
@@ -68,5 +69,24 @@ public class AuthorServiceImpl implements AuthorService {
         if (!authorRepository.existsById(id))
             throw new ResourceNotFoundException("The Author does not exist by given ID!!");
         authorRepository.deleteById(id);
+    }
+
+    @Override
+    public boolean existsById(Long id){
+        return authorRepository.existsById(id);
+    }
+
+    @Override
+    public AuthorDto findAuthorByEmail(String email) {
+        return AuthorMapper.mapToAuthorDto(authorRepository.findAuthorByEmail(email));
+    }
+
+    @Override
+    public List<AuthorDto> findAllAuthorByJoiningYear(int queryYear){
+        return authorRepository
+                .findAllAuthorByCreationDateTime(queryYear)
+                .stream()
+                .map(AuthorMapper::mapToAuthorDto)
+                .collect(Collectors.toList());
     }
 }

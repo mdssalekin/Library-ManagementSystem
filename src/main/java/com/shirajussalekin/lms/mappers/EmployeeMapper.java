@@ -15,7 +15,7 @@ public class EmployeeMapper {
                 employee.getContactNo(),
                 employee.getDateOfBirth(),
                 employee.getCreationDateTime(),
-                employee.getRoles(),
+                employee.getRole(),
                 employee.getArticles()
         );
     }
@@ -29,7 +29,7 @@ public class EmployeeMapper {
                 employeeDto.getContactNo(),
                 employeeDto.getDateOfBirth(),
                 employeeDto.getJoiningDateTime(),
-                employeeDto.getRoles(),
+                employeeDto.getRole(),
                 employeeDto.getArticles()
         );
     }

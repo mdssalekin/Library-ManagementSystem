@@ -20,13 +20,13 @@ public class BaseEntity {
     @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "email", nullable = false, unique = true)
+    @Column(name = "email", unique = true)
     private String email;
 
     @Column(name = "gender")
     private String gender;
 
-    @Column(name = "contact_no", nullable = false, unique = true)
+    @Column(name = "contact_no", unique = true)
     private String contactNo;
 
     @Temporal(TemporalType.DATE)

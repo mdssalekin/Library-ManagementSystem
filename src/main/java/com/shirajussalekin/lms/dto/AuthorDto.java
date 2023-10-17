@@ -25,5 +25,4 @@ public class AuthorDto {
     private Date dateOfBirth;
     private Date creationDateTime = new Timestamp(new Date().getTime());
     private Set<Book> books;
-
 }

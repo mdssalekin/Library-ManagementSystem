@@ -16,6 +16,7 @@ public class Author extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(name = "imgUrl")
     private String imgUrl;
 
@@ -23,7 +24,7 @@ public class Author extends BaseEntity {
     @JoinTable(
             name = "authors_books",
             joinColumns = @JoinColumn(
-                    name = "authod_id",
+                    name = "author_id",
                     referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(
                     name = "book_id",

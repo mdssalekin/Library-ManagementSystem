@@ -23,6 +23,6 @@ public class EmployeeDto {
     private String contactNo;
     private Date dateOfBirth;
     private Date joiningDateTime;
-    private Set<Role> roles;
+    private Role role;
     private Set<Article> articles;
 }

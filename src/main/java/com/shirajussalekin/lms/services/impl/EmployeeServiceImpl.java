@@ -57,7 +57,7 @@ public class EmployeeServiceImpl implements EmployeeService {
                 employeeDto.getContactNo(),
                 employeeDto.getDateOfBirth(),
                 employeeDto.getJoiningDateTime(),
-                employeeDto.getRoles(),
+                employeeDto.getRole(),
                 employeeDto.getArticles()
                 );
         return EmployeeMapper.mapToEmployeeDto(employeeRepository.save(employee));

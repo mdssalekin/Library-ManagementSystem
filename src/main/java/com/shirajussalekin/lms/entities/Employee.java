@@ -21,16 +21,9 @@ public class Employee extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToMany
-    @JoinTable(
-            name = "employees_roles",
-            joinColumns = @JoinColumn(
-                    name = "employee_id",
-                    referencedColumnName = "id"),
-            inverseJoinColumns = @JoinColumn(
-                    name = "role_id",
-                    referencedColumnName = "id"))
-    private Set<Role> roles;
+    @ManyToOne
+    @JoinColumn(name = "role_id")
+    private Role role;
 
     @OneToMany(mappedBy = "employee")
     private Set<Article> articles;
@@ -45,7 +38,7 @@ public class Employee extends BaseEntity {
             String contactNo,
             Date dateOfBirth,
             Date joiningDateTime,
-            Set<Role> roles,
+            Role role,
             Set<Article> articles
     ) {
         super(
@@ -58,7 +51,7 @@ public class Employee extends BaseEntity {
                 joiningDateTime
         );
         this.id = id;
-        this.roles = roles;
+        this.role = role;
         this.articles = articles;
 
     }

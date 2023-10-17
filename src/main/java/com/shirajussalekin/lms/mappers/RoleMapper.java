@@ -9,7 +9,6 @@ public class RoleMapper {
                 role.getId(),
                 role.getRoleName(),
                 role.getDescription(),
-                role.getEmployees(),
                 role.getPrivileges()
         );
     }
@@ -19,7 +18,6 @@ public class RoleMapper {
                 roleDto.getId(),
                 roleDto.getRoleName(),
                 roleDto.getDescription(),
-                roleDto.getEmployees(),
                 roleDto.getPrivileges()
         );
     }

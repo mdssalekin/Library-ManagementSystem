@@ -14,4 +14,12 @@ public interface AuthorService {
     AuthorDto updateAuthor(Long id, AuthorDto authorDto);
 
     void deleteAuthor(Long id);
+
+    boolean existsById(Long id);
+
+    AuthorDto findAuthorByEmail(String email);
+
+    List<AuthorDto> findAllAuthorByJoiningYear(int queryYear);
+
+
 }

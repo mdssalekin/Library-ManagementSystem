@@ -27,9 +27,6 @@ public class Role {
     @Column(name = "description")
     private String description;
 
-    @ManyToMany(mappedBy = "roles")
-    private Set<Employee> employees;
-
     @ManyToMany
     @JoinTable(
             name = "roles_privileges",
