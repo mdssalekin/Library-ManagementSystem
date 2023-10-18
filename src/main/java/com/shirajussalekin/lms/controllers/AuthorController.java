@@ -59,10 +59,10 @@ public class AuthorController {
         return ResponseEntity.ok(authorService.findAuthorByEmail(emailId));
     }
 
-    @GetMapping("/search/date/{queryYear}")
-    public ResponseEntity<List<AuthorDto>> findAllAuthorsByCreationDateTime(
-            @PathVariable("queryYear") int queryYear
-    ){
-        return ResponseEntity.ok(authorService.findAllAuthorByJoiningYear(queryYear));
-    }
+//    @GetMapping("/search/date/{queryYear}")
+//    public ResponseEntity<List<AuthorDto>> findAllAuthorsByCreationDateTime(
+//            @PathVariable("queryYear") int queryYear
+//    ){
+//        return ResponseEntity.ok(authorService.findAllAuthorByJoiningYear(queryYear));
+//    }
 }

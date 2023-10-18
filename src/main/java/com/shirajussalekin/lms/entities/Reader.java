@@ -35,6 +35,12 @@ public class Reader extends BaseEntity {
                     referencedColumnName = "id"))
     private Set<Book> books;
 
+    @OneToMany(mappedBy = "senderReader")
+    private List<Message> sentMessages;
+
+    @OneToMany(mappedBy = "receiverReader")
+    private List<Message> receivedMessages;
+
 //    @OneToMany(mappedBy = "sender")
 //    private List<Message> sentMessages;
 //

@@ -3,6 +3,7 @@ package com.shirajussalekin.lms.entities;
 import jakarta.persistence.*;
 import lombok.*;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -32,6 +33,12 @@ public class Author extends BaseEntity {
             )
     )
     private Set<Book> books;
+
+    @OneToMany(mappedBy = "senderAuthor")
+    private List<Message> sentMessages;
+
+    @OneToMany(mappedBy = "receiverAuthor")
+    private List<Message> receivedMessages;
 
     public Author(
             Long id,

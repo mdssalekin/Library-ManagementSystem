@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -28,6 +29,11 @@ public class Employee extends BaseEntity {
     @OneToMany(mappedBy = "employee")
     private Set<Article> articles;
 
+    @OneToMany(mappedBy = "senderEmployee")
+    private List<Message> sentMessages;
+
+    @OneToMany(mappedBy = "receiverEmployee")
+    private List<Message> receivedMessages;
 
     public Employee(
             Long id,

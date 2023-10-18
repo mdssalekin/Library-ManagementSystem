@@ -6,21 +6,22 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "articles")
-public class Article extends PostBaseEntity {
+@Table(name = "comments")
+public class Comment extends PostBaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(mappedBy = "article")
-    private List<Comment> comments;
+    @ManyToOne
+    @JoinColumn(
+            name = "article_id",
+            referencedColumnName = "id")
+    private Article article;
 
 }

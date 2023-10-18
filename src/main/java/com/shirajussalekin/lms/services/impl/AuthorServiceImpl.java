@@ -81,12 +81,12 @@ public class AuthorServiceImpl implements AuthorService {
         return AuthorMapper.mapToAuthorDto(authorRepository.findAuthorByEmail(email));
     }
 
-    @Override
-    public List<AuthorDto> findAllAuthorByJoiningYear(int queryYear){
-        return authorRepository
-                .findAllAuthorByCreationDateTime(queryYear)
-                .stream()
-                .map(AuthorMapper::mapToAuthorDto)
-                .collect(Collectors.toList());
-    }
+//    @Override
+//    public List<AuthorDto> findAllAuthorByJoiningYear(int queryYear){
+//        return authorRepository
+//                .findAllAuthorByCreationDateTime(queryYear)
+//                .stream()
+//                .map(AuthorMapper::mapToAuthorDto)
+//                .collect(Collectors.toList());
+//    }
 }

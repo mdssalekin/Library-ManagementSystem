@@ -21,11 +21,28 @@ public class Message {
     @Column(name = "content")
     private String content;
 
-//    @ManyToOne
-//    @JoinColumn(name = "sender_id")
-//    private Employee sender;
-//
-//    @ManyToOne
-//    @JoinColumn(name = "receiver_id")
-//    private Reader receiver;
+    @ManyToOne
+    @JoinColumn(name = "senderReader_id")
+    private Reader senderReader;
+
+    @ManyToOne
+    @JoinColumn(name = "receiverReader_id")
+    private Reader receiverReader;
+
+    @ManyToOne
+    @JoinColumn(name = "senderEmployee_id")
+    private Employee senderEmployee;
+
+    @ManyToOne
+    @JoinColumn(name = "receiverEmployee_id")
+    private Employee receiverEmployee;
+
+    @ManyToOne
+    @JoinColumn(name = "senderAuthor_id")
+    private Author senderAuthor;
+
+    @ManyToOne
+    @JoinColumn(name = "receiverAuthor_id")
+    private Author receiverAuthor;
+
 }

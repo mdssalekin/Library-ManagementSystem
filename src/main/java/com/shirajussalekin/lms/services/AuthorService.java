@@ -19,7 +19,7 @@ public interface AuthorService {
 
     AuthorDto findAuthorByEmail(String email);
 
-    List<AuthorDto> findAllAuthorByJoiningYear(int queryYear);
+    //List<AuthorDto> findAllAuthorByJoiningYear(int queryYear);
 
 
 }
